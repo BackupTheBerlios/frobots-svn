@@ -79,7 +79,7 @@ B.iter
     let x = 125.0 +. Random.float 750.0
     and y = 125.0 +. Random.float 750.0
     and theta = Random.float (Const.pi *. 2.0) in
-    arena#add_object (b :> Object.t) ~x ~y ~r:25.0 ~v:(1.0, theta) ())
+    arena#add_object (b :> Object.t) ~x ~y ~r:25.0 ~v:(0.0, theta) ())
   !bot_set;;
 
 (* Initialize GUI: *)
