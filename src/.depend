@@ -1,0 +1,33 @@
+arena.cmo: logging.cmi util.cmo arena.cmi 
+arena.cmx: logging.cmx util.cmx arena.cmi 
+builtins.cmo: env.cmi builtins.cmi 
+builtins.cmx: env.cmx builtins.cmi 
+const.cmo: const.cmi 
+const.cmx: const.cmi 
+env.cmo: absyn.cmi env.cmi 
+env.cmx: absyn.cmi env.cmi 
+eval.cmo: absyn.cmi env.cmi eval.cmi 
+eval.cmx: absyn.cmi env.cmx eval.cmi 
+lexer.cmo: parser.cmi 
+lexer.cmx: parser.cmx 
+logging.cmo: logging.cmi 
+logging.cmx: logging.cmi 
+main.cmo: arena.cmi const.cmi env.cmi eval.cmi game_state.cmi lexer.cmo \
+    logging.cmi object.cmi parser.cmi 
+main.cmx: arena.cmx const.cmx env.cmx eval.cmx game_state.cmi lexer.cmx \
+    logging.cmx object.cmx parser.cmx 
+object.cmo: absyn.cmi const.cmi env.cmi eval.cmi object.cmi 
+object.cmx: absyn.cmi const.cmx env.cmx eval.cmx object.cmi 
+parser.cmo: absyn.cmi parser.cmi 
+parser.cmx: absyn.cmi parser.cmi 
+static.cmo: absyn.cmi static.cmi 
+static.cmx: absyn.cmi static.cmi 
+test_eval.cmo: absyn.cmi builtins.cmi env.cmi eval.cmi lexer.cmo parser.cmi 
+test_eval.cmx: absyn.cmi builtins.cmx env.cmx eval.cmx lexer.cmx parser.cmx 
+builtins.cmi: env.cmi game_state.cmi 
+env.cmi: absyn.cmi 
+eval.cmi: absyn.cmi env.cmi 
+game_state.cmi: arena.cmi object.cmi 
+object.cmi: absyn.cmi env.cmi eval.cmi 
+parser.cmi: absyn.cmi 
+static.cmi: absyn.cmi 
