@@ -31,6 +31,7 @@ and value = IntV of int
           | RefV of value ref
           | BuiltinV of builtin
           | ClosureV of Absyn.var list * Absyn.exp * env ref
+          | ContV of (unit -> value)
 
 let rec pp_value = function
   | IntV i -> string_of_int i
@@ -41,6 +42,7 @@ let rec pp_value = function
   | RefV r -> "Ref: " ^ (pp_value !r)
   | BuiltinV b -> "Builtin: " ^ b
   | ClosureV (xs, e, en) -> "Closure: fun (" ^ (String.concat ", " xs) ^ ") = ?"
+  | ContV f -> "Continuation: <function>"
 
 let empty_env : env = StringMap.empty;;
 

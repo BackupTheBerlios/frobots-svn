@@ -194,6 +194,7 @@ and apply_fun f vs aux =
 let step (stk, n, curr) aux: state option =
   if n > 5000 then error "max stack depth reached (infinite recursion?)" else
   match stk, curr with
+  | _, Val (ContV f) -> Some (stk, n, Val (f ()))
   | [], Val _ -> None (* terminal state *)
   | UnopF Neg :: stk', Val (IntV i) ->
       Some (stk', n - 1, Val (IntV (-i)))

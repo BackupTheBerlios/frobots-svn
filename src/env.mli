@@ -29,6 +29,7 @@ type value = IntV of int
            | RefV of value ref
            | BuiltinV of builtin
            | ClosureV of Absyn.var list * Absyn.exp * env ref
+           | ContV of (unit -> value)  (* ok, so maybe this isn't a value... *)
 
 (* Pretty-printing: *)
 val pp_value : value -> string
